@@ -42,15 +42,15 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
 
   return (
     <PageShell currentPath="/catalogo">
-      <section className="grid gap-8 px-6 py-10 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-14">
+      <section className="grid gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-14">
         <div className="space-y-5">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">
             {collection.label}
           </p>
-          <h1 className="display-font text-5xl text-stone-950 sm:text-6xl">
+          <h1 className="display-font text-4xl text-stone-950 sm:text-6xl">
             {collection.title}
           </h1>
-          <p className="text-lg leading-8 text-stone-700">{collection.headline}</p>
+          <p className="text-base leading-7 text-stone-700 sm:text-lg sm:leading-8">{collection.headline}</p>
           <p className="max-w-xl text-base leading-8 text-stone-600">
             {collection.longDescription}
           </p>
@@ -71,7 +71,7 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
           </div>
         </div>
 
-        <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] border border-[var(--border)] bg-white/70">
+        <div className="relative min-h-[320px] overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-white/70 sm:min-h-[420px] sm:rounded-[2rem] lg:min-h-[520px]">
           <Image
             src={collection.image}
             alt={collection.alt}
@@ -83,7 +83,7 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
         </div>
       </section>
 
-      <section className="border-y border-[var(--border)] bg-[var(--surface-strong)] px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
+      <section className="border-y border-[var(--border)] bg-[var(--surface-strong)] px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-14">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-[1.8rem] border border-[var(--border)] bg-white/80 p-6">
             <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Punti chiave</p>
@@ -98,7 +98,7 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
 
           <div className="rounded-[1.8rem] border border-[var(--border)] bg-white/80 p-6">
             <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Materiali suggeriti</p>
-            <div className="mt-5 grid gap-4 sm:grid-cols-3">
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {collection.materials.map((material) => (
                 <div key={material} className="rounded-[1.2rem] border border-[var(--border)] bg-white/70 p-4 text-sm uppercase tracking-[0.2em] text-stone-700">
                   {material}
@@ -109,7 +109,7 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
         </div>
       </section>
 
-      <section className="px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
+      <section className="px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-14">
         <div className="mb-8 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Galleria collezione</p>
           <h2 className="display-font mt-3 text-4xl text-stone-950 sm:text-5xl">
@@ -128,7 +128,7 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
         />
       </section>
 
-      <section className="border-t border-[var(--border)] px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
+      <section className="border-t border-[var(--border)] px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-14">
         <div className="mb-8 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Dettagli progetto</p>
           <h2 className="display-font mt-3 text-4xl text-stone-950 sm:text-5xl">

@@ -3,7 +3,7 @@ import { brandName } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[var(--border)] px-6 py-6 text-sm text-stone-600 sm:px-8 lg:px-10">
+    <footer className="border-t border-[var(--border)] px-4 py-6 text-sm text-stone-600 sm:px-6 lg:px-10">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p>
           {brandName} | Showroom cucine a Cesena e provincia

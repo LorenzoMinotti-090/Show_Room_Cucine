@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContattiPage() {
   return (
     <PageShell currentPath="/contatti">
-      <section className="grid gap-8 px-6 py-10 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:px-10 lg:py-14">
+      <section className="grid gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[0.85fr_1.15fr] lg:px-10 lg:py-14">
         <div className="space-y-5">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Contatti</p>
           <h1 className="display-font text-5xl text-stone-950 sm:text-6xl">

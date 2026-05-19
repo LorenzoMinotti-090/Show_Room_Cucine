@@ -82,9 +82,9 @@ export function ImageLightboxGallery({
   return (
     <>
       {selectedImage ? (
-        <section ref={viewerRef} className="mb-5 overflow-hidden rounded-[2rem] border border-[var(--border)] bg-white/80 shadow-[0_24px_80px_rgba(45,29,18,0.08)]">
+        <section ref={viewerRef} className="mb-5 overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-white/80 shadow-[0_24px_80px_rgba(45,29,18,0.08)] sm:rounded-[2rem]">
           <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="relative min-h-[320px] bg-[#e9ded0] sm:min-h-[440px] lg:min-h-[620px]">
+            <div className="relative aspect-[4/5] min-h-[260px] bg-[#e9ded0] sm:aspect-[4/3] sm:min-h-[360px] lg:min-h-[620px] lg:aspect-auto">
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
@@ -95,7 +95,7 @@ export function ImageLightboxGallery({
               />
             </div>
 
-            <div className="flex flex-col justify-between gap-6 border-t border-[var(--border)] p-6 sm:p-8 lg:border-l lg:border-t-0">
+            <div className="flex flex-col justify-between gap-6 border-t border-[var(--border)] p-4 sm:p-6 lg:border-l lg:border-t-0 lg:p-8">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.35em] text-stone-500 sm:text-xs">
                   {viewerTitle}
@@ -109,13 +109,13 @@ export function ImageLightboxGallery({
               </div>
 
               <div className="space-y-3">
-                <div className="flex flex-wrap gap-3">
+                <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
                   <button
                     type="button"
                     onClick={() =>
                       setSelectedIndex((current) => (current - 1 + images.length) % images.length)
                     }
-                    className="rounded-full border border-[var(--steel)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--steel)] transition-colors duration-300 hover:bg-[var(--steel)] hover:text-stone-50 sm:px-5 sm:py-3 sm:text-sm"
+                    className="rounded-full border border-[var(--steel)] px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-[var(--steel)] transition-colors duration-300 hover:bg-[var(--steel)] hover:text-stone-50 sm:px-5 sm:py-3 sm:text-sm"
                   >
                     Prec.
                   </button>
@@ -124,7 +124,7 @@ export function ImageLightboxGallery({
                     onClick={() =>
                       setSelectedIndex((current) => (current + 1) % images.length)
                     }
-                    className="rounded-full border border-[var(--steel)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--steel)] transition-colors duration-300 hover:bg-[var(--steel)] hover:text-stone-50 sm:px-5 sm:py-3 sm:text-sm"
+                    className="rounded-full border border-[var(--steel)] px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-[var(--steel)] transition-colors duration-300 hover:bg-[var(--steel)] hover:text-stone-50 sm:px-5 sm:py-3 sm:text-sm"
                   >
                     Succ.
                   </button>
@@ -165,7 +165,7 @@ export function ImageLightboxGallery({
                   }}
                   onClick={() => setSelectedIndex(index)}
                   className={[
-                    "group relative w-28 shrink-0 snap-center overflow-hidden border border-[var(--border)] bg-white/75 text-left transition-all duration-300 hover:-translate-y-1 sm:w-32 lg:w-full lg:snap-none",
+                    "group relative w-[7.5rem] shrink-0 snap-center overflow-hidden border border-[var(--border)] bg-white/75 text-left transition-all duration-300 hover:-translate-y-1 sm:w-full lg:snap-none",
                     roundedClassName,
                     safeSelectedIndex === index
                       ? "ring-2 ring-[var(--accent)] ring-offset-2 ring-offset-[var(--background)] opacity-100"

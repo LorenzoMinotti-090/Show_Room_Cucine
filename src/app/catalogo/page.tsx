@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function CatalogoPage() {
   return (
     <PageShell currentPath="/catalogo">
-      <section className="grid gap-8 px-6 py-10 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-10 lg:py-14">
+      <section className="grid gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[0.8fr_1.2fr] lg:px-10 lg:py-14">
         <div className="space-y-5">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Catalogo</p>
           <h1 className="display-font text-5xl text-stone-950 sm:text-6xl">
@@ -24,14 +24,14 @@ export default function CatalogoPage() {
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {kitchenCollections.map((collection) => (
             <Link
               key={collection.title}
               href={`/catalogo/${collection.slug}`}
               className="overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-white/75"
             >
-              <div className="relative h-72">
+              <div className="relative h-64 sm:h-72">
                 <Image src={collection.image} alt={collection.alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" />
               </div>
               <div className="p-6">
@@ -44,7 +44,7 @@ export default function CatalogoPage() {
         </div>
       </section>
 
-      <section className="border-y border-[var(--border)] bg-[var(--surface-strong)] px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
+      <section className="border-y border-[var(--border)] bg-[var(--surface-strong)] px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-14">
         <div className="mb-8 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Dettagli</p>
           <h2 className="display-font mt-3 text-4xl text-stone-950 sm:text-5xl">
@@ -54,7 +54,7 @@ export default function CatalogoPage() {
         <div className="grid gap-5 lg:grid-cols-2">
           {materialShots.map((shot) => (
             <Link key={shot.title} href="/progettazione" className="overflow-hidden rounded-[1.85rem] border border-[var(--border)] bg-white/80 transition-transform duration-300 hover:-translate-y-1">
-              <div className="relative h-[320px]">
+              <div className="relative h-[260px] sm:h-[320px]">
                 <Image src={shot.image} alt={shot.alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
               <div className="p-6">
@@ -66,7 +66,7 @@ export default function CatalogoPage() {
         </div>
       </section>
 
-      <section className="px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
+      <section className="px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-14">
         <div className="mb-8 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Libreria visiva</p>
           <h2 className="display-font mt-3 text-4xl text-stone-950 sm:text-5xl">

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <PageShell currentPath="/gallery">
-      <section className="px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
+      <section className="px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-14">
         <div className="mb-10 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Gallery</p>
           <h1 className="display-font mt-3 text-5xl text-stone-950 sm:text-6xl">
@@ -31,7 +31,7 @@ export default function GalleryPage() {
         />
       </section>
 
-      <section className="border-y border-[var(--border)] bg-black/5 px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
+      <section className="border-y border-[var(--border)] bg-black/5 px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-14">
         <div className="mb-8 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Selezione ambienti</p>
           <h2 className="display-font mt-3 text-4xl text-stone-950 sm:text-5xl">
