@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Show Room | Officina Cucine
 
-## Getting Started
+Sito showroom di cucine su misura realizzato con Next.js, pensato per presentare collezioni, gallery progetti, materiali e contatti in una veste moderna, editoriale e responsive.
 
-First, run the development server:
+## Panoramica
+
+Il progetto include:
+
+- home page con hero visuale e sezioni introduttive
+- catalogo con collezioni cucina e pagine dettaglio dedicate
+- gallery immagini con visualizzatore integrato
+- sezione progettazione con materiali e finiture
+- pagina contatti con riferimenti showroom
+- layout responsive ottimizzato per mobile, tablet e desktop
+
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+
+## Avvio locale
+
+Installa le dipendenze:
+
+```bash
+npm install
+```
+
+Avvia l'ambiente di sviluppo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build di produzione:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Avvio della build locale:
 
-## Learn More
+```bash
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Controllo lint:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Struttura principale
 
-## Deploy on Vercel
+```text
+src/
+	app/
+		catalogo/
+		contatti/
+		gallery/
+		progettazione/
+	components/
+	lib/
+public/
+	images/
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contenuti del progetto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I testi condivisi, le collezioni, la gallery, i materiali e i dati di contatto sono centralizzati in [src/lib/site-data.ts](src/lib/site-data.ts).
+
+I componenti principali del layout si trovano in:
+
+- [src/components/site-header.tsx](src/components/site-header.tsx)
+- [src/components/site-footer.tsx](src/components/site-footer.tsx)
+- [src/components/page-shell.tsx](src/components/page-shell.tsx)
+- [src/components/image-lightbox-gallery.tsx](src/components/image-lightbox-gallery.tsx)
+
+## Pubblicazione
+
+Il progetto è adatto a essere pubblicato su GitHub e distribuito su piattaforme come Vercel.
+
+Flusso consigliato:
+
+```bash
+git add .
+git commit -m "Aggiorna showroom"
+git push origin main
+```
+
+## Note
+
+- Le immagini del sito sono salvate nella cartella `public/images`.
+- Alcune cartelle immagine presenti nella root del repository sono asset sorgente usati durante la costruzione del progetto.
