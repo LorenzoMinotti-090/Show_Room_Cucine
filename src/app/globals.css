@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f2ede4;
+  --foreground: #16110d;
+  --surface: rgba(255, 248, 240, 0.78);
+  --surface-strong: #f7f0e4;
+  --accent: #a4683b;
+  --accent-dark: #6b3f1f;
+  --steel: #40484b;
+  --border: rgba(22, 17, 13, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-cormorant);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    radial-gradient(circle at top left, rgba(164, 104, 59, 0.24), transparent 32%),
+    radial-gradient(circle at 85% 20%, rgba(64, 72, 75, 0.22), transparent 30%),
+    linear-gradient(180deg, #f5efe6 0%, #efe6da 44%, #e5d9ca 100%);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(164, 104, 59, 0.25);
+}
+
+.display-font {
+  font-family: var(--font-cormorant), serif;
+}
+
+.soft-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 80px rgba(45, 29, 18, 0.08);
+}
+
+.industrial-grid {
+  background-image:
+    linear-gradient(rgba(22, 17, 13, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 17, 13, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
