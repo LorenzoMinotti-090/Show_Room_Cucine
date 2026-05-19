@@ -59,13 +59,14 @@ export default function ProgettazionePage() {
             columns="lg:grid-cols-2"
             aspectClassName="aspect-[16/10]"
             roundedClassName="rounded-[1.85rem]"
+            viewerTitle="Dettaglio materiale"
           />
         </div>
       </section>
 
       <section className="px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
         <div className="mb-8 max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Material library</p>
+          <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Materiali e finiture</p>
           <h2 className="display-font mt-3 text-4xl text-stone-950 sm:text-5xl">
             Top, banconi, luci, cappe e rubinetti completano il carattere del progetto.
           </h2>
@@ -82,6 +83,7 @@ export default function ProgettazionePage() {
           columns="sm:grid-cols-2 lg:grid-cols-5"
           aspectClassName="aspect-square"
           roundedClassName="rounded-[1.4rem]"
+          viewerTitle="Finitura selezionata"
         />
       </section>
     </PageShell>

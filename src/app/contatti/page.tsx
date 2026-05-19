@@ -15,7 +15,7 @@ export default function ContattiPage() {
         <div className="space-y-5">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Contatti</p>
           <h1 className="display-font text-5xl text-stone-950 sm:text-6xl">
-            Prenota una visita in showroom o una call di orientamento.
+            Prenota una visita in showroom o una consulenza iniziale.
           </h1>
           <p className="max-w-lg text-base leading-8 text-stone-700">
             Un primo confronto serve a chiarire esigenze, stile, tempi e budget, cosi da impostare il progetto con una direzione precisa fin dall&apos;inizio.

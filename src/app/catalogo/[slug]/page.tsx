@@ -113,7 +113,7 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
         <div className="mb-8 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.35em] text-stone-500">Galleria collezione</p>
           <h2 className="display-font mt-3 text-4xl text-stone-950 sm:text-5xl">
-            Immagini dedicate a {collection.title} con apertura lightbox.
+            Immagini dedicate a {collection.title} per approfondire finiture, atmosfera e proporzioni.
           </h2>
         </div>
 
@@ -124,6 +124,7 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
           }))}
           columns="sm:grid-cols-2 lg:grid-cols-3"
           aspectClassName="aspect-[4/3]"
+          viewerTitle="Vista selezionata"
         />
       </section>
 
@@ -143,6 +144,7 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
           columns="sm:grid-cols-2 lg:grid-cols-5"
           aspectClassName="aspect-square"
           roundedClassName="rounded-[1.4rem]"
+          viewerTitle="Dettaglio selezionato"
         />
       </section>
     </PageShell>

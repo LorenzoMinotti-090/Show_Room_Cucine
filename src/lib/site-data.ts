@@ -19,7 +19,7 @@ export const kitchenCollections: CollectionDetail[] = [
   {
     slug: "linea-frame",
     title: "Linea Frame",
-    label: "Industrial urban",
+    label: "Stile industriale",
     description:
       "Volumi puliti, metallo brunito e superfici materiche per ambienti dal carattere deciso.",
     image: "/images/showroom/catalogo-a.png",
@@ -45,7 +45,7 @@ export const kitchenCollections: CollectionDetail[] = [
   {
     slug: "linea-atelier",
     title: "Linea Atelier",
-    label: "Contemporary warm",
+    label: "Contemporaneo caldo",
     description:
       "Legni chiari, gole integrate e composizioni su misura pensate per una cucina da vivere ogni giorno.",
     image: "/images/showroom/catalogo-b.png",
@@ -72,7 +72,7 @@ export const kitchenCollections: CollectionDetail[] = [
   {
     slug: "linea-signature",
     title: "Linea Signature",
-    label: "Luxury custom",
+    label: "Su misura premium",
     description:
       "Isola importante, pietre tecniche e dettagli su misura per progetti di fascia alta.",
     image: "/images/showroom/catalogo-c.png",

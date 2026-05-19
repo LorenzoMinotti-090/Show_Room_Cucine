@@ -22,7 +22,7 @@ export function ImageLightboxGallery({
   columns = "sm:grid-cols-2 lg:grid-cols-4",
   aspectClassName = "aspect-[4/5]",
   roundedClassName = "rounded-[1.6rem]",
-  viewerTitle = "Vista editoriale",
+  viewerTitle = "Immagine selezionata",
 }: ImageLightboxGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const safeSelectedIndex = images.length === 0 ? null : Math.min(selectedIndex, images.length - 1);
@@ -140,7 +140,7 @@ export function ImageLightboxGallery({
                     rel="noopener noreferrer"
                     className="inline-flex text-xs uppercase tracking-[0.2em] text-stone-500 transition-colors duration-300 hover:text-[var(--accent-dark)] sm:text-sm"
                   >
-                    Apri immagine originale
+                    Apri in nuova scheda
                   </a>
                 </div>
               </div>
@@ -149,43 +149,50 @@ export function ImageLightboxGallery({
         </section>
       ) : null}
 
-      <div className="overflow-x-auto pb-2 [scrollbar-width:thin]">
-        <div className={`flex min-w-max gap-3 ${columns ? "" : ""}`}>
-        {images.map((image, index) => {
-          return (
-            <button
-              key={image.src}
-              type="button"
-              ref={(element) => {
-                thumbnailRefs.current[index] = element;
-              }}
-              onClick={() => setSelectedIndex(index)}
-              className={[
-                "group relative w-28 shrink-0 overflow-hidden border border-[var(--border)] bg-white/75 text-left transition-transform duration-300 hover:-translate-y-1 sm:w-32 lg:w-36",
-                roundedClassName,
-                safeSelectedIndex === index ? "ring-2 ring-[var(--accent)] ring-offset-2 ring-offset-[var(--background)]" : "opacity-85 hover:opacity-100",
-              ].join(" ")}
-            >
-              <div className={`relative ${aspectClassName}`}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,14,10,0.02),rgba(18,14,10,0.28))]" />
-                {image.label ? (
-                  <div className="absolute bottom-0 left-0 p-2.5 sm:p-3">
-                    <p className="line-clamp-2 text-[10px] uppercase tracking-[0.24em] text-white/90 sm:text-[11px]">
-                      {image.label}
-                    </p>
+      <div className="relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-[linear-gradient(90deg,rgba(242,237,228,0.96),rgba(242,237,228,0))] lg:hidden" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-[linear-gradient(270deg,rgba(242,237,228,0.96),rgba(242,237,228,0))] lg:hidden" />
+
+        <div className="overflow-x-auto pb-2 [scrollbar-width:thin] lg:overflow-visible lg:pb-0">
+          <div className={`flex min-w-max snap-x snap-mandatory gap-3 px-1 sm:grid sm:min-w-0 sm:px-0 ${columns}`}>
+            {images.map((image, index) => {
+              return (
+                <button
+                  key={image.src}
+                  type="button"
+                  ref={(element) => {
+                    thumbnailRefs.current[index] = element;
+                  }}
+                  onClick={() => setSelectedIndex(index)}
+                  className={[
+                    "group relative w-28 shrink-0 snap-center overflow-hidden border border-[var(--border)] bg-white/75 text-left transition-all duration-300 hover:-translate-y-1 sm:w-32 lg:w-full lg:snap-none",
+                    roundedClassName,
+                    safeSelectedIndex === index
+                      ? "ring-2 ring-[var(--accent)] ring-offset-2 ring-offset-[var(--background)] opacity-100"
+                      : "opacity-85 hover:opacity-100",
+                  ].join(" ")}
+                >
+                  <div className={`relative ${aspectClassName}`}>
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      sizes="(max-width: 1024px) 40vw, (max-width: 1280px) 20vw, 16vw"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,14,10,0.02),rgba(18,14,10,0.28))]" />
+                    {image.label ? (
+                      <div className="absolute bottom-0 left-0 p-2.5 sm:p-3">
+                        <p className="line-clamp-2 text-[10px] uppercase tracking-[0.24em] text-white/90 sm:text-[11px]">
+                          {image.label}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
-                ) : null}
-              </div>
-            </button>
-          );
-        })}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

@@ -85,6 +85,7 @@ export default function CatalogoPage() {
           columns="sm:grid-cols-2 lg:grid-cols-4"
           aspectClassName="aspect-[4/5]"
           roundedClassName="rounded-[1.5rem]"
+          viewerTitle="Variante selezionata"
         />
       </section>
     </PageShell>
