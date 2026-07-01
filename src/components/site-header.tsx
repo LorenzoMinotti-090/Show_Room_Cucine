@@ -12,7 +12,7 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-[var(--border)] px-4 py-4 sm:px-6 sm:py-5 lg:px-10">
+    <header className="sticky top-0 z-50 rounded-t-[1.5rem] border-b border-[var(--border)] bg-[rgba(247,240,228,0.9)] px-4 py-4 backdrop-blur-md sm:rounded-t-[2rem] sm:px-6 sm:py-5 lg:px-10">
       <div className="flex items-center justify-between gap-4">
         <Link href="/" className="block">
           <p className="text-[11px] uppercase tracking-[0.32em] text-stone-500 sm:text-xs sm:tracking-[0.4em]">{brandName}</p>
