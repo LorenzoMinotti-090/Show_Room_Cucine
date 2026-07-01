@@ -21,7 +21,6 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
 
         <button
           type="button"
-          aria-expanded={isMenuOpen}
           aria-controls="site-navigation"
           aria-label={isMenuOpen ? "Chiudi menu" : "Apri menu"}
           onClick={() => setIsMenuOpen((current) => !current)}
